@@ -1,0 +1,310 @@
+{\rtf1\ansi\ansicpg932\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw16840\paperh23820\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 body \{\
+  font-family: "Helvetica", "Kozuka Mincho Pr6N", serif;\
+  margin: 0;\
+  padding: 0;\
+  background: #fff;\
+  color: #222;\
+  overflow-x: hidden;\
+\}\
+\
+header \{\
+  display: flex;\
+  justify-content: space-between;\
+  align-items: center;\
+  padding: 1rem 1.5rem;\
+  border-bottom: 1px solid #ccc;\
+  background-color: #fff;\
+  position: sticky;\
+  top: 0;\
+  z-index: 10;\
+\}\
+\
+.logo \{\
+  font-size: 1.6rem;\
+  font-weight: 300;\
+\}\
+\
+.menu-icon \{\
+  font-size: 2rem;\
+  cursor: pointer;\
+  z-index: 1100;\
+  position: relative;\
+\}\
+\
+.menu \{\
+  position: fixed;\
+  top: 0;\
+  left: -100%;\
+  width: 280px;\
+  height: 100%;\
+  background: #f7f7f7;\
+  transition: left 0.3s ease;\
+  padding: 2rem 1.5rem;\
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);\
+  z-index: 1000;\
+  overflow-y: auto;\
+\}\
+\
+.menu.open \{\
+  left: 0;\
+\}\
+\
+.menu ul \{\
+  list-style: none;\
+  padding: 0;\
+  margin: 2rem 0 0 0;\
+\}\
+\
+.menu ul li \{\
+  margin-bottom: 1.5rem;\
+\}\
+\
+.menu a, .menu span \{\
+  text-decoration: none;\
+  font-size: 1.2rem;\
+  color: #333;\
+  cursor: pointer;\
+  display: inline-block;\
+\}\
+\
+.submenu \{\
+  display: none;\
+  margin-top: 0.5rem;\
+  padding-left: 1rem;\
+\}\
+\
+.submenu li \{\
+  margin-bottom: 0.5rem;\
+\}\
+\
+.submenu.show \{\
+  display: block;\
+\}\
+\
+main \{\
+  padding: 2rem 1.5rem;\
+\}\
+\
+h1 \{\
+  font-size: 2rem;\
+  margin-bottom: 1rem;\
+\}\
+\
+.content, .works, .contact \{\
+  max-width: 800px;\
+  margin: auto;\
+\}\
+\
+.photo-placeholder, .main-image, .work-item \{\
+  width: 100%;\
+  height: 300px;\
+  background: #eee;\
+  border: 1px solid #ccc;\
+  margin-top: 1rem;\
+\}\
+/* \uc0\u22522 \u26412 \u12522 \u12475 \u12483 \u12488  */\
+* \{\
+  margin: 0;\
+  padding: 0;\
+  box-sizing: border-box;\
+\}\
+\
+\
+/* \uc0\u12462 \u12515 \u12521 \u12522 \u12540 \u34920 \u31034  */\
+.gallery \{\
+  display: flex;\
+  flex-wrap: wrap;\
+  gap: 1.5rem;\
+  justify-content: center;\
+  padding: 2rem;\
+\}\
+\
+/* \uc0\u36890 \u24120 \u12398 \u30011 \u20687 \u12392 \u20874 \u23376 \u12459 \u12496 \u12540 \u12398 \u20849 \u36890 \u35373 \u23450  */\
+.gallery img,\
+.book-cover \{\
+  width: 200px;\
+  height: auto;\
+  cursor: pointer;\
+  transition: transform 0.3s ease;\
+\}\
+\
+.gallery img:hover,\
+.book-cover:hover \{\
+  transform: scale(1.05);\
+\}\
+\
+/* \uc0\u37325 \u12394 \u12426 \u34920 \u29694 \u12398 \u12473 \u12479 \u12483 \u12463  */\
+.book-stack \{\
+  position: relative;\
+  width: 200px;\
+  height: auto;\
+  cursor: pointer;\
+\}\
+\
+.stacked \{\
+  position: absolute;\
+  width: 100%;\
+  top: 0;\
+  left: 0;\
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);\
+\}\
+\
+/* \uc0\u12514 \u12540 \u12480 \u12523  */\
+#overlay \{\
+  position: fixed;\
+  top: 0;\
+  left: 0;\
+  width: 100%;\
+  height: 100%;\
+  background: rgba(0, 0, 0, 0.85);\
+  display: none;\
+  justify-content: center;\
+  align-items: center;\
+  z-index: 2000;\
+  padding: 2rem;\
+\}\
+\
+#overlay.active \{\
+  display: flex;\
+\}\
+\
+#modal-img \{\
+  max-width: 90%;\
+  max-height: 90%;\
+  border: 4px solid white;\
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);\
+\}\
+\
+/* \uc0\u38281 \u12376 \u12427 \u12508 \u12479 \u12531  */\
+.close-btn \{\
+  position: absolute;\
+  top: 20px;\
+  right: 30px;\
+  font-size: 2rem;\
+  color: white;\
+  cursor: pointer;\
+\}\
+\
+/* \uc0\u12514 \u12540 \u12480 \u12523 \u30690 \u21360 \u65288 \u12506 \u12540 \u12472 \u36865 \u12426 \u65289  */\
+.nav-btn \{\
+  position: absolute;\
+  top: 50%;\
+  transform: translateY(-50%);\
+  font-size: 3rem;\
+  background: none;\
+  border: none;\
+  color: white;\
+  cursor: pointer;\
+  display: none; /* \uc0\u21021 \u26399 \u38750 \u34920 \u31034 \u12289 script\u12391 \u34920 \u31034 \u20999 \u26367  */\
+  z-index: 2001;\
+\}\
+\
+#prev \{\
+  left: 40px;\
+\}\
+\
+#next \{\
+  right: 40px;\
+\}\
+\
+/* \uc0\u12524 \u12473 \u12509 \u12531 \u12471 \u12502 \u23550 \u24540  */\
+@media (max-width: 600px) \{\
+  .gallery \{\
+    flex-direction: column;\
+    align-items: center;\
+  \}\
+\
+  .menu li \{\
+    text-align: center;\
+  \}\
+\}\
+/* Hero\uc0\u12475 \u12463 \u12471 \u12519 \u12531  */\
+.hero-container \{\
+  position: relative;\
+  width: 100%;\
+  max-height: 600px;\
+  overflow: hidden;\
+\}\
+\
+.hero-image \{\
+  width: 100%;\
+  height: auto;\
+  display: block;\
+  object-fit: cover;\
+\}\
+\
+.hero-text \{\
+  position: absolute;\
+  top: 50%;\
+  left: 50%;\
+  transform: translate(-50%, -50%);\
+  font-size: 6rem;\
+  color: white;\
+  font-weight: bold;\
+  z-index: 10;\
+  pointer-events: none;\
+\}\
+.about-section \{\
+  display: flex;\
+  flex-wrap: wrap;\
+  justify-content: center;\
+  align-items: center;\
+  gap: 2rem;\
+  padding: 2rem;\
+  max-width: 1000px;\
+  margin: auto;\
+\}\
+\
+.about-image img \{\
+  width: 300px;\
+  max-width: 100%;\
+  border-radius: 10px;\
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);\
+\}\
+\
+.about-text \{\
+  flex: 1;\
+  font-size: 1.1rem;\
+  line-height: 1.8;\
+  color: #333;\
+\}\
+.about-wrapper \{\
+  max-width: 1100px;\
+  margin: 3rem auto;\
+  padding: 0 1.5rem;\
+\}\
+\
+.about-title \{\
+  font-size: 2.5rem;\
+  margin-bottom: 2rem;\
+  font-weight: 500;\
+  font-weight: bold;\
+\}\
+\
+.about-section \{\
+  display: flex;\
+  flex-wrap: wrap;\
+  align-items: flex-start;\
+  gap: 2rem;\
+\}\
+\
+.about-image img \{\
+  width: 300px;\
+  max-width: 100%;\
+  border-radius: 10px;\
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);\
+\}\
+\
+.about-text \{\
+  flex: 1;\
+  font-size: 1.1rem;\
+  line-height: 1.8;\
+  color: #333;\
+\}}
